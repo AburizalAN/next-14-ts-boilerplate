@@ -5,9 +5,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 function getLocale(request: NextRequest): string | undefined {
   let headers = { 'accept-language': request.headers.get("accept-language") as "string" }
-  console.log("headers languages", headers)
   let languages = new Negotiator({ headers }).languages()
-  console.log("languages", languages)
   let locales: readonly string[] = i18n.locales
   let defaultLocale = i18n.defaultLocale
 
