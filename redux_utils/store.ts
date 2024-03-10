@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import generalReducer from '@app/features/general/generalSlice'
+import generalReducer from '@app/features/general/redux_slice'
 
 export const makeStore = () => {
   return configureStore({
