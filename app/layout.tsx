@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import { cookies } from 'next/headers'
 import "@app/styles/globals.scss"
+import * as React from "react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +16,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+  const cookieStore = cookies()
+  const localeCookie = cookieStore.get("NEXT_LOCALE")
+
   return (
-    <html lang="id">
+    <html lang={localeCookie?.value ?? "en"}>
       <body className={inter.className}>
         {children}
       </body>

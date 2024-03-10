@@ -1,3 +1,5 @@
+"use client"
+
 import { Locale } from "@app/i18n.config";
 
 import Home from "@app/features/general/views/HomePage";
