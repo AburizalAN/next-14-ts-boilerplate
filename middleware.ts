@@ -14,7 +14,11 @@ function getLocale(request: NextRequest): string | undefined {
 
 export function middleware(request: NextRequest) {
   const response = NextResponse.next()
-  
+
+  let localeCookie = request.cookies.get("NEXT_LOCALE")
+
+  if (localeCookie) return
+
   const locale = getLocale(request) as string
   response.cookies.set("NEXT_LOCALE", locale)
   
