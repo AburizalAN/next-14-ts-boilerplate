@@ -3,26 +3,16 @@ import { createSlice } from '@reduxjs/toolkit'
 export const generalSlice = createSlice({
   name: 'general',
   initialState: {
-    value: 0
+    locale: "en",
   },
   reducers: {
-    increment: state => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1
-    },
-    decrement: state => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
+    setLocale: (state, action) => {
+      state.locale = action.payload
     }
   }
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = generalSlice.actions
+export const { setLocale } = generalSlice.actions
 
 export default generalSlice.reducer

@@ -3,8 +3,9 @@ import { Inter } from "next/font/google"
 import { cookies } from 'next/headers'
 import "@app/styles/globals.scss"
 import * as React from "react"
+import StoreProvider from "./StoreProvider"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang={localeCookie?.value ?? "en"}>
       <body className={inter.className}>
-        {children}
+        <StoreProvider locale={localeCookie?.value ?? "en"}>
+          {children}
+        </StoreProvider>
       </body>
     </html>
   );
