@@ -1,6 +1,6 @@
 import LocalizedStrings from "react-localization";
 
-const lang = new LocalizedStrings({
+const dictionaries = new LocalizedStrings({
   id: {
     helloWorld: "Halo Dunia"
   },
@@ -9,4 +9,4 @@ const lang = new LocalizedStrings({
   }
 })
 
-export default lang
+export default dictionaries
