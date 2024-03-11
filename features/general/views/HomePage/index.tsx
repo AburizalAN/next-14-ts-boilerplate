@@ -1,5 +1,5 @@
 import dictionaries from "@app/features/general/dictionaries"
-import { useAppSelector } from "@app/redux_utils/hooks"
+import { useAppSelector } from "@app/utils/redux_utils/hooks"
 
 export default function Home() {
   const locale = useAppSelector((state) => state.general.locale)

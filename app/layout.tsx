@@ -19,12 +19,13 @@ export default function RootLayout({
 }>) {
   
   const cookieStore = cookies()
-  const localeCookie = cookieStore.get("NEXT_LOCALE")
+  const locale = cookieStore.get("NEXT_LOCALE")?.value ?? "en"
+  const token = cookieStore.get("jwtToken")?.value ?? ""
 
   return (
-    <html lang={localeCookie?.value ?? "en"}>
+    <html lang={locale}>
       <body className={inter.className}>
-        <StoreProvider locale={localeCookie?.value ?? "en"}>
+        <StoreProvider token={token} locale={locale}>
           {children}
         </StoreProvider>
       </body>
