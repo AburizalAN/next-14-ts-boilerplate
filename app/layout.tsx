@@ -4,6 +4,7 @@ import { cookies } from 'next/headers'
 import "@app/styles/globals.scss"
 import * as React from "react"
 import StoreProvider from "./StoreProvider"
+import DictionariesProvider from "./DictionariesProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -26,7 +27,9 @@ export default function RootLayout({
     <html lang={locale}>
       <body className={inter.className}>
         <StoreProvider token={token} locale={locale}>
-          {children}
+          <DictionariesProvider>
+            {children}
+          </DictionariesProvider>
         </StoreProvider>
       </body>
     </html>

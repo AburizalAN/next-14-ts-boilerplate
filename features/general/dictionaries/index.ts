@@ -2,10 +2,12 @@ import LocalizedStrings from "react-localization";
 
 const dictionaries = new LocalizedStrings({
   id: {
-    helloWorld: "Halo Dunia"
+    helloWorld: "Halo Dunia",
+    test: "test indo",
   },
   en: {
-    helloWorld: "Hello World"
+    helloWorld: "Hello World",
+    test: "test english",
   }
 })
 
